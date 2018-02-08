@@ -1,0 +1,2 @@
+six
+git+git://github.com/gumblex/zhconv#egg=zhconv
