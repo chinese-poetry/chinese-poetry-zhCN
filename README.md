@@ -7,7 +7,7 @@ chinese-poetry [古诗] 简体中文版本, **宋词在主仓库就是简体无�
 # build
 
 ```
-git submodule init
+git submodule update --init
 
 pip install -r requirements.txt
 
