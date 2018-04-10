@@ -10,13 +10,15 @@ if six.PY2:
 
 POETRY_DIRECTORY = './chinese-poetry/json/'
 
-
 def trans(name):
     file_path = os.path.join(POETRY_DIRECTORY, name)
 
     raw = open(file_path, 'r').read()
 
-    content = convert_for_mw(unicode(raw), 'zh-cn')
+    if six.PY2:
+        content = convert_for_mw(unicode(raw), 'zh-cn')
+    else:
+        content = convert_for_mw(raw, 'zh-cn')
 
     output_path = os.path.join('./poetry/', name)
 
@@ -26,4 +28,4 @@ def trans(name):
     
 
 
-map(trans, os.listdir(POETRY_DIRECTORY))
+list(map(trans, os.listdir(POETRY_DIRECTORY)))
