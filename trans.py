@@ -13,7 +13,7 @@ POETRY_DIRECTORY = './chinese-poetry/json/'
 def trans(name):
     file_path = os.path.join(POETRY_DIRECTORY, name)
 
-    raw = open(file_path, 'r').read()
+    raw = open(file_path, 'r', encoding='utf-8').read()
 
     if six.PY2:
         content = convert_for_mw(unicode(raw), 'zh-cn')
